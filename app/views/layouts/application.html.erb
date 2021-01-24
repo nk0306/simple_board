@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SimpleBoard</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+<!--    クロスサイトリクエストフォージェリ(CSRF)の対策(Webアプリケーションに存在する脆弱性を利用した攻撃方法のこと。-->
+<!--掲示板や問い合わせフォームなどを処理するWebアプリケーションが、本来拒否すべき他サイトからのリクエストを受信し処理してしまう。)-->
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<!--   stylesheet_link_tag : 役割：外部スタイルシートを指定するリンクタグを作成-->
+<!--使い方：stylesheet_link_tag(スタイルシートへのパス[, HTMLオプション])-->
+<!--media:all　は全てのメディアを指定する。-->
+<!--'data-turbolinks-track':役割：画面推移を高速化させるためのライブラリ-->
+<!--使い方：現在のページのtitleとbodyだけを、-->
+<!--　　　　新しいページのtitleとbodyに変換する-->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <!--linkタグ：「そのページ」と「外部のファイルやページ」を関連づける-->
+ <!--relでファイルとの関係性、hrefで そのファイルがある場所（URL）-->
+<!--rel属性：記載したリンク先（href)と現在のページとの関係性を説明する属性-->
+<!--href属性：外部のリンク先を指定する属性のこと。 他のリンク先へのハイパーリンクを指定する属性-->
+<!--（ハイパーリンクとは指定範囲のテキストまたは画像を他のページなどへリンクさせ-->
+<!--、その部分を選択することでそのリンク先へ移動できるようにする要素）-->
+<!--src属性：画像や別のページ（例えば、同じファイルにあるqiita.jsとか）の情報をもってくる属性。現在のページに埋め込む。-->
+<!--・htefは、現在のページからリンク先へ移動する。別ページの情報を取ってくる。-->
+<!--現在のページ→href→参照元-->
+
+<!--・srcは、現在のページの元になるデータやページを呼び込む。取り寄せる。-->
+<!--現在のページ←src←参照元-->
+<!--integrity 属性は、サブリソース完全性（SRI）機能を用いて、取得したリソースが予期せず改竄されていないかをユーザエージェントが検証するためのメタデータ-->
+  </head>
+
+  <body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+  </header>
+   <main>
+     <div class="container">
+    <%= yield %>
+    </header>
+   </main>
+   <footer class="py-3 bg-light">
+     <div class="container">
+       <span class="text-muted small">Simple Board by Ruby on Rails & Bootstrap 4</span>
+     </div>
+   </footer>
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  　 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+　   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--scriptタグ外部スクリプトを読み込んだりするために使用するタグ-->
+  </body>
+</html>
+
+
+
