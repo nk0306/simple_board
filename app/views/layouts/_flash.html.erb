@@ -1,0 +1,9 @@
+<div class="my-3">
+  <% flash.each do |key, value| %>
+  <!--キーと値をペアで関連付けたい時にハッシュはとても重宝します-->
+    <div class="alert <%= bs4_bgcolor_for(key) %> alert-dismissable fade show">
+      <%= value %>
+      <button class="close" data-dismiss="alert">x</button>
+    </div>
+  <% end %>
+</div>

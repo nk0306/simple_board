@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+ /*セレクタ・プロパティ・値:「どこの・何を・どのような見た目に変えるのか」*/
+ main {
+  min-height: calc(100vh - 60px);
+  overflow: hidden;
+  /*overflowとはCSSのプロパティの１つで「要素のボックスからはみ出た部分をどう扱うか」を指定します*/
+  /*hidden：はみ出た部分が隠れる*/
+  padding-top: 60px;
+  /*padding-topとは上のパディングを個別に指定するプロパティ*/
+}
+
+ header {
+   height: 60px;
+ }
+
+ footer {
+   height: 60px;
+ }

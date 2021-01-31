@@ -1,10 +1,18 @@
 <%= form_with(model: post, local: true) do |form| %>
+ <!--form_with:情報を送信するためのヘルパーメソッド-->
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      英語専用のテキストヘルパー。
+<!--最初の引数に整数があると、それに基づいて２番目の引数である英単語が複数形に変化したものが渡される-->
+<!--このコードだと"0 errors"、"1 error"、"2 errors"などのように、-->
+<!--エラーの数によって活用される単語が変わってきます。"1 errors" のような英語の文法に合わない文字列を避けることができます-->
       <ul>
         <% post.errors.full_messages.each do |message| %>
+        <!-- バリデーションの検証ではじかれるコントローラのアクションで@post.errors.full_messageにエラーが入る -->
+<!-- @postのerrors.full_messagesに格納されたエラー文の配列をeach文で変数messageに格納 -->
           <li><%= message %></li>
+          <!-- 変数messageを出力 -->
         <% end %>
       </ul>
     </div>

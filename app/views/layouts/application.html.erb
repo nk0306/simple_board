@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SimpleBoard</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -36,6 +37,8 @@
   <!--app/views/layouts/_header.html.erbのファイルをrails が自動的に読み込んで結合-->
    <main>
      <div class="container">
+          <!-- flashメッセージを表示 -->
+         <%= render "layouts/flash" %>
     <%= yield %>
     </header>
    </main>
